@@ -12,8 +12,7 @@ public class EggBox : MonoBehaviour
         if (count>=1 && collision.gameObject.CompareTag("Player"))
         {
             eggBonus.SetActive(true);
-            count--;
-            Debug.Log("¾Ë Get");     
+            count--;  
         }
         else
         {

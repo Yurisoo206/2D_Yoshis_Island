@@ -10,12 +10,11 @@ public class Mario_Move : MonoBehaviour
     public bool isMario = false;
     [SerializeField] private GameObject babyMario;
 
-    // Start is called before the first frame update
     private void Awake()
     {
         enemyR = GetComponent<Rigidbody2D>();
         ChangeMove();
-        Invoke("ChangeMove", 5f);//Invoke();주어진 시간이 지난 후 지정된 함수를 실행 
+        Invoke("ChangeMove", 5f);
         
     }
 
@@ -46,7 +45,7 @@ public class Mario_Move : MonoBehaviour
             nextMove = 1;
             transform.localEulerAngles = new Vector3(0, 0, 0);
         }
-        Invoke("ChangeMove", 5f);//재귀함수 : 스스로 호출 딜레이 없이 재귀함수 사용은 좀 위험
+        Invoke("ChangeMove", 5f);
     }
 
 

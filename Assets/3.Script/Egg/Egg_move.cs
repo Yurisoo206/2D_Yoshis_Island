@@ -14,12 +14,12 @@ public class Egg_move : MonoBehaviour
         eggR = GetComponent<Rigidbody2D>();
         ChangeMove();
 
-        Invoke("ChangeMove", 5f);//Invoke();주어진 시간이 지난 후 지정된 함수를 실행
+        Invoke("ChangeMove", 5f);
     }
 
     void FixedUpdate()
     {
-        eggR.velocity = new Vector2(nextMove * 0.3f, eggR.velocity.y); //방향 이동
+        eggR.velocity = new Vector2(nextMove * 0.3f, eggR.velocity.y);
                                                                      
     }
 
@@ -37,7 +37,7 @@ public class Egg_move : MonoBehaviour
             nextMove = 1;
             transform.localEulerAngles = new Vector3(0, 0, 0);
         }
-        Invoke("ChangeMove", 7f);//재귀함수 : 스스로 호출 딜레이 없이 재귀함수 사용은 좀 위험
+        Invoke("ChangeMove", 7f);
 
 
     }

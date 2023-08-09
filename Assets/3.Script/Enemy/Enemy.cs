@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    Rigidbody2D enemyR;
     public PlayerController player;
     private Animator ani;
     public bool isEating = false;
@@ -33,16 +32,12 @@ public class Enemy : MonoBehaviour
         if (isCatch == true)
         {
             ani.SetBool("Catch", isCatch);
-            Debug.Log("¿¡ÈÞ");
-            //transform.position = new Vector3(pos.x+0.2f,pos.y,0.000000001f);
-            //enemyR.velocity = new Vector2(nextMove, enemyR.velocity.y);
 
             if (Input.GetKey(KeyCode.S))
             {
                 player.egg++;
                 Destroy(gameObject);
             }
-            //Destroy(gameObject);
         }       
     }
 

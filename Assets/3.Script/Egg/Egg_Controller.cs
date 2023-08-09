@@ -12,8 +12,6 @@ public class Egg_Controller : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             player.egg++;
-            Debug.Log("아싸 알이다");
-            
 
             Destroy(gameObject);
         }

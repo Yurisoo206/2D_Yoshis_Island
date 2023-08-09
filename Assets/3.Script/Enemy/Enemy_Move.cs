@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy_Move : MonoBehaviour
 {
     Rigidbody2D enemyR;
-    public int nextMove = -1;//행동지표를 결정할 변수
+    public int nextMove = -1;
     public float moveSpeed = 5f;
 
     private void Awake()
@@ -13,7 +13,7 @@ public class Enemy_Move : MonoBehaviour
         enemyR = GetComponent<Rigidbody2D>();
         ChangeMove();
         
-        Invoke("ChangeMove", 5f);//Invoke();주어진 시간이 지난 후 지정된 함수를 실행
+        Invoke("ChangeMove", 5f);
     }
 
     void FixedUpdate()
@@ -35,7 +35,7 @@ public class Enemy_Move : MonoBehaviour
             nextMove = 1;
             transform.localEulerAngles = new Vector3(0, 0, 0);
         }
-        Invoke("ChangeMove", 5f);//재귀함수 : 스스로 호출 딜레이 없이 재귀함수 사용은 좀 위험
+        Invoke("ChangeMove", 5f);
     }
 
 }

@@ -44,7 +44,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()//유니티에서 숫자가 고정되는 경우가 있기 때문에 여기서 하면 나중에 속도 변경하기 좋음
     {
-        //movement.moveSpeed = 2f;
         if (movement.moveSpeed <= 10f)
         {
             movement.moveSpeed = 2f;
@@ -54,12 +53,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float x = Input.GetAxisRaw("Horizontal");
-        // A, D 또는 ←, →방향키를 입력받음
-        // X축 이동값을 저장(좌, 우)
-        //
+
         float y = Input.GetAxisRaw("Vertical");
-        // W, S 또는 ↑, ↓ 방향키를 입력받음
-        // Y축 이동값을 저장(상, 하)
+
         if (egg >= 7)
         {
             egg = 7;
@@ -73,11 +69,10 @@ public class PlayerController : MonoBehaviour
         Attack();
 
         movement.MoveTo(new Vector3(x, 0, 0f));
-        //Movement에 입력값을 보내줌 그리고 방향벡터를 나타낸다.
-        //2D이기 때문에 z좌표는 사용할 일이 없기 때문에 0f
+
     }
    
-    //- 행동 ---------------------------------
+    //행동
     private void Run()
     {
         //알 던지는 애니 false처리
@@ -249,8 +244,6 @@ public class PlayerController : MonoBehaviour
         }
      
         ani.SetBool("Ready", isReady);
-        //ani.SetBool("Attack", isAttack);
-        //isAttack = false 조건은 
     }
 
     //충돌 처리

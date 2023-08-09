@@ -16,7 +16,7 @@ public class Egg : MonoBehaviour
 
     private void Update()
     {
-        Watch();//따라갈 위치를 계속 갱신해주는 함수 생성
+        Watch();
         Follow();
     }
 
@@ -24,7 +24,7 @@ public class Egg : MonoBehaviour
     {
         //Input Pos
 
-        targetPos.Enqueue(target.position); //Enqueue() : 큐에 데이터 저장하는 함수
+        targetPos.Enqueue(target.position);
 
         // Output Pos
         if (targetPos.Count > followDelay)
